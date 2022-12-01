@@ -18,7 +18,15 @@ public class MyWorld extends World
         super(600, 400, 1);
         Elephant liyu = new Elephant("liyu");
         addObject(liyu,200,200);
+        while(true){
+            createApple();
+        }
+    }
+    
+    public void createApple(){
         Apple apple = new Apple();
-        addObject(apple,300,0);
+        addObject(apple, Greenfoot.getRandomNumber(300), 0);
     }
 }
+
+
