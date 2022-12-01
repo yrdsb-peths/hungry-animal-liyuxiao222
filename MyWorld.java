@@ -16,13 +16,14 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(600, 400, 1);
-        Elephant liyu = new Elephant("liyu");
+        Elephant liyu = new Elephant();
         addObject(liyu,200,200);
+        createApple();
     }
     
     public void createApple(){
         Apple apple = new Apple();
-        addObject(apple, Greenfoot.getRandomNumber(300), 0);
+        addObject(apple, Greenfoot.getRandomNumber(600), 0);
     }
 }
 
