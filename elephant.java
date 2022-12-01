@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @Liyu Xiao 
  * @11/30/2022
  */
-public class elephant extends Actor
+public class Elephant extends Actor
 {
     /**
      * Act - do whatever the elephant wants to do. This method is called whenever
@@ -14,6 +14,6 @@ public class elephant extends Actor
      */
     public void act()
     {
-        
+        move(1);
     }
 }
