@@ -15,12 +15,13 @@ public class Elephant extends Actor
     public void act()
     {
         if(Greenfoot.isKeyDown("left")){
-            move(-3);
+            move(-2);
         }
         else if(Greenfoot.isKeyDown("right")){
-            move(3);
+            move(2);
         }
         
+        // eats the apple and spawns a new apple
         eat();
     }
     
