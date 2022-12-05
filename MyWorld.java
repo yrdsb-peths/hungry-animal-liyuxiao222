@@ -19,7 +19,7 @@ public class MyWorld extends World
     {    
         super(600, 400, 1, false);
         //create elephant object
-        Elephant liyu = new Elephant();
+        Elephant liyu = new Elephant(1);
         addObject(liyu,200,200);
         //create lable
         scoreLabel = new Label(0, 50);
