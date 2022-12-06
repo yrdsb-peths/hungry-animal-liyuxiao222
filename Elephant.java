@@ -8,11 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
-    GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
     private int speed;
-    
+    GreenfootSound sound = new GreenfootSound("elephantcub.mp3");
+    GreenfootImage idle[] = new GreenfootImage[];
     public Elephant(int speed){
         this.speed = speed;
+        for(int i = 0; i < idle.length; i++){
+            idle[i] = new GreenfootImage("images/elephant_idle/idle
+        }
+        setImage(idle);
     }
     public void act()
     {
@@ -30,7 +34,7 @@ public class Elephant extends Actor
     public void eat(){
         if(isTouching(Apple.class)){
            removeTouching(Apple.class);
-           elephantSound.play();
+           sound.play();
            MyWorld world = (MyWorld)getWorld();
            world.createApple();
            speed += 1;
