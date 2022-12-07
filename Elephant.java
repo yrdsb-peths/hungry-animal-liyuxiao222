@@ -10,13 +10,20 @@ public class Elephant extends Actor
 {
     private int speed;
     GreenfootSound sound = new GreenfootSound("elephantcub.mp3");
-    GreenfootImage idle[] = new GreenfootImage[];
+    GreenfootImage idle[] = new GreenfootImage[8];
     public Elephant(int speed){
         this.speed = speed;
         for(int i = 0; i < idle.length; i++){
-            idle[i] = new GreenfootImage("images/elephant_idle/idle
+            idle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
         }
-        setImage(idle);
+        setImage(idle[0]);
+        
+    }
+    //animate the elephant
+    int imageIndex = 0;
+    public void animate(){
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
     }
     public void act()
     {
@@ -29,6 +36,7 @@ public class Elephant extends Actor
         
         // eats the apple and spawns a new apple
         eat();
+        animate();
     }
     
     public void eat(){
