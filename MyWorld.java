@@ -47,7 +47,12 @@ public class MyWorld extends World
         Apple apple = new Apple();
         apple.setSpeed(level);
         addObject(apple, Greenfoot.getRandomNumber(600), 0);
+        createBomb();
         increaseScore();
+    }
+    public void createBomb(){
+        Bomb bomb = new Bomb();
+        addObject(bomb, Greenfoot.getRandomNumber(600), 0);
     }
 }
 
