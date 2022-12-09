@@ -10,11 +10,7 @@ public class MyWorld extends World
 {
     int sum = -1;
     Label scoreLabel;
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    int level = 1;
     public MyWorld()
     {    
         super(600, 400, 1, false);
@@ -40,11 +36,16 @@ public class MyWorld extends World
     public void increaseScore(){
         sum++;
         scoreLabel.setValue(sum);
+        
+        if(sum % 5 == 0){
+            level += 10;
+        }
     }
     
     //creates a new apple every time an apple is eaten
     public void createApple(){
         Apple apple = new Apple();
+        apple.setSpeed(level);
         addObject(apple, Greenfoot.getRandomNumber(600), 0);
         increaseScore();
     }

@@ -53,7 +53,7 @@ public class TitleScreen extends World
         removeObject(label);
         Label label1 = new Label("Press space to start", 50);
         addObject(label1,305,305);
-        Label label2 = new Label(" use <--> to move", 50);
+        Label label2 = new Label(" use \u2190 and \u2192  to move", 50);
         addObject(label2,228,115);
         label2.setLocation(307,255);
     }
