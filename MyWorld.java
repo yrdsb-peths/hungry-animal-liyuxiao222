@@ -15,7 +15,7 @@ public class MyWorld extends World
     {    
         super(600, 400, 1, false);
         //create elephant object
-        Elephant liyu = new Elephant(1);
+        Elephant liyu = new Elephant(3);
         addObject(liyu,200,200);
         //create lable
         scoreLabel = new Label(0, 50);
@@ -47,8 +47,8 @@ public class MyWorld extends World
         Apple apple = new Apple();
         apple.setSpeed(level);
         addObject(apple, Greenfoot.getRandomNumber(600), 0);
-        createBomb();
         increaseScore();
+        createBomb();
     }
     public void createBomb(){
         Bomb bomb = new Bomb();

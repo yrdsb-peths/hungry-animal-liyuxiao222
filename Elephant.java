@@ -22,14 +22,14 @@ public class Elephant extends Actor
         this.speed = speed;
         for(int i = 0; i < idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            idleRight[i].scale(100, 100);
+            idleRight[i].scale(50, 50);
         }
         //Initial elephant image
         
         for(int i =0; i< idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(100, 100);
+            idleLeft[i].scale(50, 50);
         }
         setImage(idleRight[0]);
         
@@ -55,13 +55,20 @@ public class Elephant extends Actor
     public void act()
     {
         if(Greenfoot.isKeyDown("left")){
-            move(-speed);
+            setLocation(getX()-speed, getY());
             facing = "left";
         }
-        else if(Greenfoot.isKeyDown("right")){
-            move(speed);
+        if(Greenfoot.isKeyDown("right")){
+            setLocation(getX()+speed, getY());
             facing = "right";
         }
+        if(Greenfoot.isKeyDown("up")){
+            setLocation(getX(), getY() - speed);
+        }
+        if(Greenfoot.isKeyDown("down")){
+            setLocation(getX(), getY() + speed);
+        }
+        
         
         // eats the apple and spawns a new apple
         eat();
@@ -74,7 +81,6 @@ public class Elephant extends Actor
            sound.play();
            MyWorld world = (MyWorld)getWorld();
            world.createApple();
-           speed += 1;
         } 
     }
 }
